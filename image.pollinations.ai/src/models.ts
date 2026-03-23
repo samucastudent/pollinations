@@ -146,6 +146,30 @@ export const IMAGE_CONFIG = {
         defaultSideLength: 1024,
     },
 
+    // Grok Imagine - xAI official image generation
+    "grok-imagine": {
+        type: "xai-image",
+        enhance: false,
+        defaultSideLength: 1024,
+    },
+
+    // Grok Imagine Pro - xAI official pro image generation (Aurora)
+    "grok-imagine-pro": {
+        type: "xai-image-pro",
+        enhance: false,
+        defaultSideLength: 1024,
+    },
+
+    // Grok Video Pro - xAI official video generation (720p)
+    "grok-video-pro": {
+        type: "xai-video",
+        enhance: false,
+        isVideo: true,
+        defaultDuration: 5,
+        maxDuration: 15,
+        defaultResolution: "720p",
+    },
+
     // Z-Image - Fast 6B parameter image generation with SPAN 2x upscaling (IO.net)
     zimage: {
         type: "zimage",

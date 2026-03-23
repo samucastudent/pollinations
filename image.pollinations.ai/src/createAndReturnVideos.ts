@@ -15,6 +15,7 @@ import {
     type VideoGenerationResult,
 } from "./models/veoVideoModel.ts";
 import { callWanAPI, callWanFastAPI } from "./models/wanVideoModel.ts";
+import { callXaiVideoAPI } from "./models/xaiVideoModel.ts";
 import type { ImageParams } from "./params.ts";
 import type { ProgressManager } from "./progressBar.ts";
 export type { VideoGenerationResult };
@@ -80,6 +81,14 @@ export async function createAndReturnVideo(
             break;
         case "nova-reel":
             result = await callNovaReelAPI(
+                prompt,
+                safeParams,
+                progress,
+                requestId,
+            );
+            break;
+        case "grok-video-pro":
+            result = await callXaiVideoAPI(
                 prompt,
                 safeParams,
                 progress,
