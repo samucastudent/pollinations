@@ -14,7 +14,7 @@ import {
     callVeoAPI,
     type VideoGenerationResult,
 } from "./models/veoVideoModel.ts";
-import { callWanAPI } from "./models/wanVideoModel.ts";
+import { callWanAPI, callWanFastAPI } from "./models/wanVideoModel.ts";
 import type { ImageParams } from "./params.ts";
 import type { ProgressManager } from "./progressBar.ts";
 export type { VideoGenerationResult };
@@ -62,8 +62,13 @@ export async function createAndReturnVideo(
         case "wan":
             result = await callWanAPI(prompt, safeParams, progress, requestId);
             break;
-        case "ltx-2":
-            result = await callLtx2API(prompt, safeParams, progress, requestId);
+        case "wan-fast":
+            result = await callWanFastAPI(
+                prompt,
+                safeParams,
+                progress,
+                requestId,
+            );
             break;
         case "p-video":
             result = await callPrunaVideoAPI(

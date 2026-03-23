@@ -129,6 +129,16 @@ export const IMAGE_CONFIG = {
         defaultResolution: "720p",
     },
 
+    // Alibaba Wan 2.2 - Fast/cheap video generation (480P, 5s fixed)
+    "wan-fast": {
+        type: "alibaba-dashscope-video",
+        enhance: false,
+        isVideo: true,
+        defaultDuration: 5,
+        maxDuration: 5,
+        defaultResolution: "480p",
+    },
+
     // Alibaba Qwen Image Plus - Text-to-image and image editing (auto-detects from image input)
     "qwen-image": {
         type: "alibaba-dashscope-image",
